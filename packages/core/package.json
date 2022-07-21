@@ -10,7 +10,7 @@
   "license": "MIT",
   "exports": "./dist/*",
   "files": [
-    "./dist/"
+    "dist/**/*"
   ],
   "devDependencies": {
     "@types/jest": "^28.1.6",
