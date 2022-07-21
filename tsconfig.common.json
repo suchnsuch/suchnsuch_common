@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"strict": true,
+		"composite": true,
+
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true
+	}
+}
