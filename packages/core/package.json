@@ -1,6 +1,6 @@
 {
   "name": "@such-n-such/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Code so useful as to be used nearly everywhere.",
   "type": "module",
   "scripts": {
@@ -8,7 +8,6 @@
   },
   "author": "Taylor Hadden",
   "license": "MIT",
-  "exports": "./dist/*",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
