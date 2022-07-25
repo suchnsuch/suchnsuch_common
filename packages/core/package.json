@@ -1,6 +1,6 @@
 {
   "name": "@such-n-such/core",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Code so useful as to be used nearly everywhere.",
   "type": "module",
   "scripts": {
