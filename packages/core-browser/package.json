@@ -1,0 +1,31 @@
+{
+  "name": "@such-n-such/core-browser",
+  "version": "0.1.0",
+  "description": "A collection of generally useful utilities for working with the js browser APIs.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "jest",
+    "deploy": "tsc --build --clean && tsc --build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suchnsuch/suchnsuch_common.git"
+  },
+  "keywords": [
+    "browser"
+  ],
+  "author": "Taylor Hadden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suchnsuch/suchnsuch_common/issues"
+  },
+  "homepage": "https://github.com/suchnsuch/suchnsuch_common#readme"
+}

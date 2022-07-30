@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A monorepo of S&S code that can be shared.",
   "type": "module",
+  "repository": "https://github.com/suchnsuch/suchnsuch_common",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --build",
@@ -12,6 +13,7 @@
   "author": "Taylor Hadden",
   "license": "MIT",
   "workspaces": [
-    "packages/core"
+    "packages/core",
+    "packages/core-browser"
   ]
 }

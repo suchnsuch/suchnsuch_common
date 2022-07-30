@@ -1,13 +1,22 @@
 {
   "name": "@such-n-such/core",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Code so useful as to be used nearly everywhere.",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suchnsuch/suchnsuch_common.git"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "deploy": "tsc --build --clean && tsc --build && npm publish"
   },
   "author": "Taylor Hadden",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suchnsuch/suchnsuch_common/issues"
+  },
+  "homepage": "https://github.com/suchnsuch/suchnsuch_common#readme",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
