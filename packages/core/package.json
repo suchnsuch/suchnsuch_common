@@ -1,6 +1,6 @@
 {
   "name": "@such-n-such/core",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Code so useful as to be used nearly everywhere.",
   "type": "module",
   "repository": {
@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "jest",
+    "build": "tsc --build",
     "deploy": "tsc --build --clean && tsc --build && npm publish"
   },
   "author": "Taylor Hadden",
@@ -17,10 +18,10 @@
     "url": "https://github.com/suchnsuch/suchnsuch_common/issues"
   },
   "homepage": "https://github.com/suchnsuch/suchnsuch_common#readme",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
-    "dist/**/*"
+    "lib/**/*"
   ],
   "publishConfig": {
     "access": "public"

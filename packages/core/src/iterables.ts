@@ -39,3 +39,11 @@ export function* mapIterator<I, M>(iterator: Iterable<I>, mapper: (item: I) => M
 		yield mapper(i)
 	}
 }
+
+export function* filterIterator<I>(iterator: Iterable<I>, predicate: (item: I) => boolean): Generator<I> {
+	for (const i of iterator) {
+		if (predicate(i)) {
+			yield i
+		}
+	}
+}
