@@ -15,6 +15,13 @@ export function includesAny<T>(target: T[], source: T[]) {
 	return false
 }
 
+export function firstOfType<T, S>(iterator: Iterable<S>, type: new (...args: any[]) => T): T | null {
+	for (const i of iterator) {
+		if (i instanceof type) return i as T
+	}
+	return null
+}
+
 export function singleOrEmpty<T>(value: T): T[] {
 	return (value !== null && value !== undefined) ? [value] : []
 }
