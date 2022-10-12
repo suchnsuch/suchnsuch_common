@@ -1,12 +1,12 @@
 {
   "name": "@such-n-such/core-browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of generally useful utilities for working with the js browser APIs.",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
-    "dist/**/*"
+    "lib/**/*"
   ],
   "publishConfig": {
     "access": "public"

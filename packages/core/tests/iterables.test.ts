@@ -1,4 +1,4 @@
-import { firstOfType } from './iterables'
+import { firstOfType } from '../src/iterables'
 
 describe('Types', () => {
 	test('Can find custom type', () => {
