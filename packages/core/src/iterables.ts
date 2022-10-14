@@ -69,3 +69,43 @@ export function* filterIterator<I>(iterator: Iterable<I>, predicate: (item: I) =
 		}
 	}
 }
+
+/**
+ * Iterates through two lists at the same time, feeding the items as arguments to the handler.
+ */
+export function zip<A, B>(lists: [A[], B[]], handler: (a: A, b: B) => void): void
+/**
+ * Iterates through three lists at the same time, feeding the items as arguments to the handler.
+ */
+export function zip<A, B, C>(lists: [A[], B[], C[]], handler: (a: A, b: B, c: C) => void): void
+export function zip(lists: any[][], handler: any) {
+	const max = lists.reduce((last, list) => {
+		if (list.length > last) return list.length
+		return last
+	}, 0)
+	for (let index = 0; index < max; index++) {
+		handler(...lists.map(l => l[index]))
+	}
+}
+
+/**
+ * Iterates through two lists at the same time, feeding the items to handler as arguments.
+ * @returns The results of handler as an array
+ */
+export function zipMap<A, B, T>(lists: [A[], B[]], handler: (a: A, b: B) => T): T[]
+/**
+ * Iterates through three lists at the same time, feeding the items to handler as arguments.
+ * @returns The results of handler as an array
+ */
+export function zipMap<A, B, C, T>(lists: [A[], B[], C[]], handler: (a: A, b: B, c: C) => T): T[]
+export function zipMap(lists: any[][], handler: any): any[] {
+	const max = lists.reduce((last, list) => {
+		if (list.length > last) return list.length
+		return last
+	}, 0)
+	const result: any[] = []
+	for (let index = 0; index < max; index++) {
+		result.push(handler(...lists.map(l => l[index])))
+	}
+	return result
+}
