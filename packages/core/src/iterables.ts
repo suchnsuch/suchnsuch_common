@@ -91,6 +91,18 @@ export function* filterIterator<I>(iterator: Iterable<I>, predicate: (item: I) =
 }
 
 /**
+ * Returns whether or not the two arrays have the same items within them.
+ */
+export function itemsShallowEqual(a: any[], b: any[]) {
+	if (a === b) return true
+	if (a.length !== b.length) return false
+	for (let i = 0; i < a.length; i++) {
+		if (a[i] !== b[i]) return false
+	}
+	return true
+}
+
+/**
  * Iterates through two lists at the same time, feeding the items as arguments to the handler.
  */
 export function zip<A, B>(lists: [A[], B[]], handler: (a: A, b: B) => void): void
