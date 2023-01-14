@@ -22,6 +22,9 @@ export function includesAny<T>(target: T[], source: T[]) {
 	return false
 }
 
+/**
+ * Moves through an iterator and finds the first item that satisfies `instanceof` the given type.
+ */
 export function firstOfType<T, S>(iterator: Iterable<S>, type: new (...args: any[]) => T): T | null {
 	for (const i of iterator) {
 		if (i instanceof type) return i as T
@@ -56,12 +59,29 @@ export function swapRemove<T>(array: T[], item: T) {
 	}
 }
 
+/**
+ * Simple check for if an iterator contains any items.
+ * Consumes the iterator.
+ */
+export function hasItems(iterator: Iterable<any>) {
+	for (const i of iterator) {
+		return true
+	}
+	return false
+}
+
+/**
+ * Returns an iterator with the results of a function called on every item in a given iterator.
+ */
 export function* mapIterator<I, M>(iterator: Iterable<I>, mapper: (item: I) => M): Generator<M> {
 	for (const i of iterator) {
 		yield mapper(i)
 	}
 }
 
+/**
+ * Returns an iterator with the items of a given iterator that satisfy the given predicate.
+ */
 export function* filterIterator<I>(iterator: Iterable<I>, predicate: (item: I) => boolean): Generator<I> {
 	for (const i of iterator) {
 		if (predicate(i)) {
