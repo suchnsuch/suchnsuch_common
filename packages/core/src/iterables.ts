@@ -91,6 +91,16 @@ export function* filterIterator<I>(iterator: Iterable<I>, predicate: (item: I) =
 }
 
 /**
+ * Returns an iterator with the results of the mapping function, discarding any nullish values.
+ */
+export function* filterMapIterator<I, M>(iterator: Iterable<I>, predicate: (item: I) => M): Generator<M> {
+	for (const i of iterator) {
+		const result = predicate(i)
+		if (result != null) yield result
+	}
+}
+
+/**
  * Returns whether or not the two arrays have the same items within them.
  */
 export function itemsShallowEqual(a: any[], b: any[]) {
