@@ -6,7 +6,9 @@ export function firstOrNull<T>(array: T[]): T | null {
 	return array?.length ? array[0] : null
 }
 
-export function last<T>(array: T[]): T {
+export function last(text: string): string
+export function last<T>(array: T[]): T
+export function last(array: any) {
 	return array[array.length - 1]
 }
 
