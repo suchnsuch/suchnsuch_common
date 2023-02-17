@@ -27,4 +27,8 @@ describe('findFullCharacter', () => {
 		expect(findFullCharacterReverse('hello', 1)).toEqual('h')
 		expect(findFullCharacterReverse('😉hello', 2)).toEqual('😉')
 	})
+
+	it('Should not consume sequential dashes', () => {
+		expect(findFullCharacterForward('---')).toEqual('-')
+	})
 })

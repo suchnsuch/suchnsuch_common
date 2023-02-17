@@ -15,7 +15,7 @@ export function repeatString(text: string, count: number) {
 // \ud800-\udbff is the range for a first surrogate pair
 // \udc00-\udfff is the range for a second surrogate pair
 // See: https://javascript.info/unicode#surrogate-pairs
-const FULL_STEP_MATCH = /[\u200D\ud800-\udbff\udc00-\udfff]/u
+const FULL_STEP_MATCH = /[\u200D\ud800-\udbff\udc00-\udfff]/
 
 /**
  * Finds the "full character step" (e.g. emoji, compound emoji) from a given index in the given string.
