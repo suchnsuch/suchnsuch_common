@@ -1,4 +1,5 @@
 export * from './async'
 export * from './iterables'
+export * from './regex'
 export * from './strings'
 export * from './values'
