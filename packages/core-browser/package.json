@@ -1,6 +1,6 @@
 {
   "name": "@such-n-such/core-browser",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A collection of generally useful utilities for working with the js browser APIs.",
   "type": "module",
   "main": "./lib/index.js",
