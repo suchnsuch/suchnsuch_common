@@ -45,20 +45,23 @@ export function singleOrEmpty<T>(value: T): T[] {
 /**
  * Removes an item from an array by putting the last item in the array in its place.
  * Does not require shifting all subsequent items in the array, but does not maintain order.
+ * Returns the index of the array
  */
 export function swapRemove<T>(array: T[], item: T) {
-	if (array.length === 0) return
+	if (array.length === 0) return -1
 
 	const index = array.indexOf(item)
-	if (index < 0) return
+	if (index < 0) return -1
 
 	if (index === array.length - 1) {
 		array.pop()
+		return array.length
 	}
 	else {
 		const last = array.pop()
 		if (last !== undefined) array[index] = last
 	}
+	return index
 }
 
 /**
