@@ -12,7 +12,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "deploy": "tsc --build --clean && tsc --build && npm publish"
   },
   "repository": {

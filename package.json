@@ -5,7 +5,7 @@
   "type": "module",
   "repository": "https://github.com/suchnsuch/suchnsuch_common",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test --workspaces",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "rebuild": "npm run clean && npm run build"
