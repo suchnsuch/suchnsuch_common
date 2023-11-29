@@ -40,15 +40,11 @@ function appendQueueItem<T>(starter: PromiseStarter<T>, tasks: PromiseQueueItem<
 
 class BaseQueue {
 	protected tasks: PromiseQueueItem<any>[] = []
-	protected index: number = -1
+	protected index: number = 0
 
 	protected _complete: Promise<void> | null = null
 
 	protected async start() {
-		if (this.index < 0) {
-			this.index = 0
-		}
-
 		while (this.index < this.tasks.length) {
 			const item = this.tasks[this.index]
 	
@@ -71,9 +67,14 @@ class BaseQueue {
 		}
 
 		this._complete = null
+		this.index = 0
+		this.tasks = []
 	}
 
 	get onComplete() { return this._complete }
+	get length() {
+		return this.tasks.length - this.index
+	}
 }
 
 export class PromiseQueue extends BaseQueue {
