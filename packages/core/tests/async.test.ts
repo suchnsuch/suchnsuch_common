@@ -20,6 +20,32 @@ describe('Promise Queue', () => {
 	
 		expect(stuff).toEqual(['Hello', 'World'])
 	})
+
+	it('Will continue to the next item if one fails', async () => {
+		const stuff: string[] = []
+	
+		const queue = new PromiseQueue()
+		queue.enqueue(async () => {
+			await wait(100)
+			stuff.push('Hello')
+		})
+
+		let hitError = false
+		queue.enqueue(async () => {
+			await wait(100)
+			throw 'This is an error!'
+		}).catch(e => hitError = true)
+
+		queue.enqueue(async () => {
+			await wait(10)
+			stuff.push('World')
+		})
+	
+		await queue.onComplete
+	
+		expect(hitError).toBeTruthy()
+		expect(stuff).toEqual(['Hello', 'World'])
+	})
 })
 
 describe('Read Write Promise Queue', () => {

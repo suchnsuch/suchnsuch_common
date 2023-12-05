@@ -25,7 +25,7 @@ interface PromiseQueueItem<T> {
 	describe?: (indent: string) => string
 }
 
-function describeQueueItem(item: PromiseQueueItem<unknown>, indent: string) {
+export function describeQueueItem(item: PromiseQueueItem<unknown>, indent: string) {
 	if (item.describe) {
 		return item.describe(indent)
 	}
@@ -62,19 +62,17 @@ class BaseQueue {
 		while (this.index < this.tasks.length) {
 			const item = this.tasks[this.index]
 	
-			let result
 			try {
-				result = await item.start()
+				const result = await item.start()
+
+				if (item.resolve) {
+					item.resolve(result)
+				}
 			}
 			catch (e) {
 				if (item.reject) {
 					item.reject(e)
 				}
-				continue;
-			}
-	
-			if (item.resolve) {
-				item.resolve(result)
 			}
 	
 			this.index++
