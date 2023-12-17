@@ -1,9 +1,8 @@
-import { get } from 'svelte/store'
-import type { PatchObserver } from './Patchable'
-import type { Patchable } from './Patchable'
-import { PatchableListPatchType, PatchableListSubPatch } from './PatchableList'
-import { PatchableMapPatchType, PatchableMapSubPatch } from './PatchableMap'
-import { SelfStore } from './SelfStore'
+import type { PatchObserver } from './Patchable.js'
+import type { Patchable } from './Patchable.js'
+import { PatchableListPatchType, PatchableListSubPatch } from './PatchableList.js'
+import { PatchableMapPatchType, PatchableMapSubPatch } from './PatchableMap.js'
+import { SelfStore } from './SelfStore.js'
 
 function getPropertyDescriptor(o, name:PropertyKey): PropertyDescriptor {
 	let proto = o, descriptor: PropertyDescriptor = null
@@ -241,8 +240,11 @@ export class ObjectStore extends SelfStore implements Patchable {
 					result[key] = value.value
 				}
 				else {
-					// Fallback to svelte get
-					result[key] = get(value)
+					// Fallback to svelte get-style interaction
+					const unsub = value.subscribe(v => {
+						result[key] = v
+					})
+					unsub()
 				}
 				includedValue = true
 			}

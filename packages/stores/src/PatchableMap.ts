@@ -1,7 +1,7 @@
 import { isValue } from "@such-n-such/core";
-import type { RawValueMode } from './ObjectStore';
-import { Patchable } from "./Patchable";
-import { PatchableStore } from "./PatchableStore";
+import type { RawValueMode } from './ObjectStore.js';
+import { Patchable } from "./Patchable.js";
+import { PatchableStore } from "./PatchableStore.js";
 import { deepEqual } from 'fast-equals';
 
 export interface PatchableMapRawPatch<P> {

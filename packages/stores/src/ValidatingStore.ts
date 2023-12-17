@@ -1,4 +1,4 @@
-import { WritableStore } from './WritableStore'
+import { WritableStore } from './WritableStore.js'
 
 export class ValidatingStore<T> extends WritableStore<T> {
 

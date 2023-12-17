@@ -1,5 +1,5 @@
 import type { Readable } from 'svelte/store'
-import { ReadableStore } from './ReadableStore'
+import { ReadableStore } from './ReadableStore.js'
 
 /**
  * Wraps a store, providing an always-available cache

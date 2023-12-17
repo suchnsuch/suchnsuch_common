@@ -1,7 +1,7 @@
-import type { RawValueMode } from './ObjectStore'
-import type { PatchObserver } from './Patchable'
-import type { Patchable } from './Patchable'
-import { WritableStore } from './WritableStore'
+import type { RawValueMode } from './ObjectStore.js'
+import type { PatchObserver } from './Patchable.js'
+import type { Patchable } from './Patchable.js'
+import { WritableStore } from './WritableStore.js'
 
 export abstract class PatchableStore<V, P> extends WritableStore<V> implements Patchable {
 

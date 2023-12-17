@@ -1,4 +1,4 @@
-import { ObjectStore, WritableStore, PatchableMap, PatchableMapPatch, PatchableMapPatchType } from '../src'
+import { ObjectStore, WritableStore, PatchableMap, PatchableMapPatch, PatchableMapPatchType } from '../lib/index.js'
 
 interface SimpleTestItem {
 	id: string

@@ -1,5 +1,5 @@
 import type { Readable, Writable } from 'svelte/store'
-import { WritableStore } from './WritableStore'
+import { WritableStore } from './WritableStore.js'
 
 /**
  * This provides a simple way of forwarding the value of stores from other stores.

@@ -1,4 +1,4 @@
-import { ReadableStore } from "./ReadableStore"
+import { ReadableStore } from "./ReadableStore.js"
 
 /**
  * Implements the [Svelte store contract](https://svelte.dev/docs#Store_contract)

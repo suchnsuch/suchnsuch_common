@@ -1,4 +1,4 @@
-import { StoreUndoStack, ObjectStore, WritableStore, PatchableList, PatchableMap } from '../src'
+import { StoreUndoStack, ObjectStore, WritableStore, PatchableList, PatchableMap } from '../lib/index.js'
 
 class TextList extends PatchableList<string, string> {
 	convertFromPatchItem(text) { return text }

@@ -1,9 +1,9 @@
 import { deepEqual } from 'fast-equals'
 
-import { lazyInitializeSubscriptionList } from './EventList'
-import type { RawValueMode } from './ObjectStore'
-import { Patchable, PatchObserver } from './Patchable'
-import { PatchableStore } from './PatchableStore'
+import { lazyInitializeSubscriptionList } from './EventList.js'
+import type { RawValueMode } from './ObjectStore.js'
+import { Patchable, PatchObserver } from './Patchable.js'
+import { PatchableStore } from './PatchableStore.js'
 
 export enum PatchableListPatchType {
 	Splice,

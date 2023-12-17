@@ -1,5 +1,5 @@
 import { derived, Readable } from 'svelte/store'
-import { WritableStore, ObjectStore, PatchableList, PatchableMap } from '../src'
+import { WritableStore, ObjectStore, PatchableList, PatchableMap } from '../lib/index.js'
 
 test('Nested object stores', () => {
 	let root = new ObjectStore() as any

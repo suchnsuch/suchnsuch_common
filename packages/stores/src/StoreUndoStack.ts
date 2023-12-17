@@ -1,5 +1,5 @@
-import type { ObjectStore } from './ObjectStore'
-import { WritableStore } from './WritableStore'
+import type { ObjectStore } from './ObjectStore.js'
+import { WritableStore } from './WritableStore.js'
 
 interface UndoItem {
 	undo(root: ObjectStore)

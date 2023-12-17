@@ -1,4 +1,4 @@
-import { PatchableStore } from './PatchableStore'
+import { PatchableStore } from './PatchableStore.js'
 
 export class TranslatingPatcher<T, P> extends PatchableStore<T, P> {
 

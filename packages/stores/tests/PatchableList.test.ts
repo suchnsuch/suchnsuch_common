@@ -1,4 +1,4 @@
-import { ObjectStore, WritableStore, PatchableList, PatchableListOptions, PatchableListPatch, PatchableListPatchType, RawValueMode } from '../src'
+import { ObjectStore, WritableStore, PatchableList, PatchableListPatch, PatchableListPatchType, RawValueMode } from '../lib/index.js'
 
 interface SimpleTestItem {
 	id: string
