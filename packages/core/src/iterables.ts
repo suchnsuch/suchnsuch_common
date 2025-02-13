@@ -25,6 +25,22 @@ export function includesAny<T>(target: T[], source: T[]) {
 }
 
 /**
+ * Finds the index of a value that matches the given equivalency predicate
+ * @param target The value to look for
+ * @param source The array to look in
+ * @param equivalency The equivalency function to use
+ * @returns The index of the equivalent item or -1
+ */
+export function indexOfEquivalent<T>(target: T, source: T[], equivalency: (a: T, b: T) => boolean) {
+	for (let i = 0; i < source.length; i++) {
+		if (equivalency(target, source[i])) {
+			return i
+		}
+	}
+	return -1
+}
+
+/**
  * Moves through an iterator and finds the first item that satisfies `instanceof` the given type.
  */
 export function firstOfType<T, S>(iterator: Iterable<S>, type: new (...args: any[]) => T): T | null {
@@ -106,14 +122,24 @@ export function* filterMapIterator<I, M>(iterator: Iterable<I>, predicate: (item
 }
 
 /**
- * Returns whether or not the two arrays have the same items within them.
+ * Returns whether or not the two arrays have the same (or equivalwnt) items within them.
+ * @param equivalency (Optional) A function that determines whether or not two items in the array count as equal
+ * @returns true if all items in both arrays are equal
  */
-export function itemsShallowEqual(a: any[], b: any[]) {
+export function arraysEqual<T>(a: T[], b: T[], equivalency?: (a: T, b: T) => boolean) {
 	if (a === b) return true
 	if (a.length !== b.length) return false
-	for (let i = 0; i < a.length; i++) {
-		if (a[i] !== b[i]) return false
+	if (equivalency) {
+		for (let i = 0; i < a.length; i++) {
+			if (!equivalency(a[i], b[i])) return false
+		}
 	}
+	else {
+		for (let i = 0; i < a.length; i++) {
+			if (a[i] !== b[i]) return false
+		}
+	}
+	
 	return true
 }
 
